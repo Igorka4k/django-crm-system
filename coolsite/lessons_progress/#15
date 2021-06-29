@@ -1,0 +1,20 @@
+Создание классов представлений в views.py (django.views.generic)
+CBV - class based views
+<имя приложения>/<имя модели>_list.html
+women/women_list.html
+
+создаём дочерний от ListView, и в маршрутах его указываем следующим образом:
+WomenHome.as_view()
+Далее мы указываем в классе WomenHome template_name = women/index.html
+Далее в index.html меняем posts на object_list, если страница пустая
+НО: Если мы хотим сохранить имя переменной posts, то просто пропишем в классе:
+context_object_name = "<имя переменной>"
+
+1) - extra_context - передача статических данных шаблону
+2) - функция get_context_data - Передача динамических и статических данных шаблону
+
+через функцию get_query в WomenHome можно отфильтровать публикуемые посты
+
+Пропишем аналогичный класс представления для категорий WomenCategory
+
+!!! Продолжить просмотр с 16.00 !!!

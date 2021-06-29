@@ -1,0 +1,13 @@
+Создание папки static (подключение стилей и, возможно, js)
+
+py manage.py collectstatic - Собирает все папки static в одну, в корневой папке проекта
+
+добавление STATIC_URL (префикс url), STATIC_ROOT (Корневая папка),
+ STATICFILES_DIRS (все static кроме корневой папки) в coolsite/settings.py
+
+Загружаем тег static через тег load в base.html "{% load static %}"
+тег static хранит в себе путь до папки static в проекте
+ (который, скорее всего, указывается в settings.py в STATIC_ROOT)
+
+тег autoescape и endautoescape - включает и выключает экранирование текста (по умолчанию вкл.)
+Нужно защиты от примитивных атак сайта с помощью таких тегов как script например.

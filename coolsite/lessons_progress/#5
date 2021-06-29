@@ -1,0 +1,22 @@
+---Базовые операции на уровне ORM DJANGO---
+
+ЧЕРЕЗ Women.objects (Класс Manager) происходит управление данными из бд, которые относятся к
+таблице Women. (Манипуляции над данными подразумевают CRUD-операции кроме delete, см. ниже;
+Также .update работает с множеством экземпляров, взятых из бд, которое называется QuerySet.)
+
+О запросах (ORM) подробнее: https://djbook.ru/rel3.0/topics/db/queries.html
+
+Продолжение работы с миграциями, Добавление модели в db с помощью Women.objects.create(title="..", ...)
+Вывод всех объектов модели Women и их фильтрация:
+
+Women.objects.filter(title="Вика").order_by("title") <title - параметр поиска> <order_by - Сортировка>
+При "-title" - сортировка обратная
+
+Women.objects.exclude(title="Вика") <title - параметр исключения из поиска>
+
+Работа с параметрами объекта Women (полями таблицы Women)
+
+Women().delete() - Удаление записи из бд (не через objects)
+
+
+w = Women(title="suspect1", content="smth", cat_id=1)
